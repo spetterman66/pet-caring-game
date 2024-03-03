@@ -1,0 +1,60 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+#tutorial, #choosepet {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5f2c82;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover, button:focus {
+    background-color: #4f2c82;
+    outline: 5px solid orange;
+    transition: all 0.5s ease;
+}
+#game {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+#pet {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    padding-top: 5px;
+}
+#petimage {
+    font-size: 44px;
+}
+#petstats {
+    position: fixed;
+}

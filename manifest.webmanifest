@@ -1,0 +1,8 @@
+{
+    "name": "Pet Caring Game",
+    "short_name": "Pet Game",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff0000"
+}

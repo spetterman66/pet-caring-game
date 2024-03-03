@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Caring Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="sw.js"></script>
+    <script src="script.js" defer></script>
+    <meta name="description" content="Take care of your chosen pet and make sure it's happy and healthy.">
+    <meta name="keywords" content="pet, caring, game, happy, healthy">
+    <meta name="author" content="Pet Caring Game">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+</head>
+
+<body onload="initializeGame()">
+    <noscript>This site requires JavaScript to be enabled.</noscript>
+    <div id="tutorial">
+        <h1>Pet Caring Game</h1>
+        <p>Take care of your chosen pet and make sure it's happy and healthy.</p>
+        <button onclick="startGame()">Start</button>
+    </div>
+    <div id="choosepet">
+        <h1>Choose your pet</h1>
+        <div id="petoptions">
+            <div id="row1">
+            <button id="dog">🐶</button>
+            <button id="cat">🐱</button>
+            <button id="rabbit">🐰</button>
+            </div>
+            <div id="row2">
+            <button id="hamster">🐹</button>
+            <button id="bird">🐦</button>
+            <button id="duck">🦆</button>
+            </div>
+        </div>
+    </div>
+    <div id="game">
+        <div id="pet">
+            <div id="petstats">
+                <div id="happiness">Happiness: <progress id="happinessvalue" value="50" max="100"></progress></div>
+                <div id="hunger">Hunger: <progress id="hungervalue" value="50" max="100"></progress></div>
+                <div id="hydration">Hydration: <progress id="hydrationvalue" value="50" max="100"></progress></div>
+                <div id="cleanliness">Cleanliness: <progress id="cleanlinessvalue" value="50" max="100"></progress></div>
+            </div>
+        </div>
+        <div id="petimage"></div>
+        <div id="actions">
+            <button onclick="feed()" id="feed">Feed</button>
+            <button onclick="giveDrink()" id="drink">Give drink</button>
+            <button onclick="play()" id="play">Play</button>
+            <button onclick="clean()" id="clean">Bathe</button>
+            <button onclick="saveGame()" id="save">Save</button>
+            <button onclick="loadGame()" id="load">Load</button>
+            <button onclick="resetGame()" id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+
+</html>

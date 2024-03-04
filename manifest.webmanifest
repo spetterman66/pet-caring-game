@@ -4,5 +4,12 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#ff0000"
+    "theme_color": "#ff0000",
+    "screenshots": [
+        {
+            "src": "screenshots/pet_caring_game_.png",
+            "sizes": "1920x1080",
+            "type": "image/png"
+        }
+    ]
 }

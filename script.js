@@ -4,11 +4,14 @@ function startGame() {
     tutorial.style.display = 'none';
     tutorial.ariaHidden = true;
 }
+
 let hunger = localStorage.getItem('hungervalue');
 let happiness = localStorage.getItem('happinessvalue');
 let hydration = localStorage.getItem('hydrationvalue');
 let cleanliness = localStorage.getItem('cleanlinessvalue');
 let pet = localStorage.getItem('petemoji');
+let feedbutton = document.getElementById('feed');
+
 function initializeGame() {
     if (localStorage.getItem('readTutorial')) {
         let tutorial = document.getElementById('tutorial');
@@ -46,11 +49,6 @@ function initializeGame() {
         document.getElementById('emoji').value = pet;
     }
     else return;
-    let feedbutton = document.getElementById('feed');
-    if (localStorage.getItem('petemoji') === '🐶') {
-        feedbutton.innerHTML = '🦴';
-    }
-    else return;       
 }
 
 function resetGame() {
@@ -69,6 +67,7 @@ dog.addEventListener("click", function () {
     console.log('Woof! Dog selected')
     localStorage.setItem("petselected", "true");
     localStorage.setItem("petemoji", "🐶")
+    localStorage.setItem("food", "🦴")
     location.reload();
     petSelection.style.display = 'none';
 });
@@ -76,6 +75,7 @@ cat.addEventListener("click", function () {
     localStorage.setItem("pet", "cat");
     console.log('Meow! Cat selected')
     localStorage.setItem("petemoji", "😺")
+    localStorage.setItem("food", "🐟")
     localStorage.setItem("petselected", "true");
     location.reload();
     petSelection.style.display = 'none';
@@ -84,6 +84,7 @@ rabbit.addEventListener("click", function () {
     localStorage.setItem("pet", "rabbit");
     console.log('Rabbit selected')
     localStorage.setItem("petemoji", "🐰")
+    localStorage.setItem("food", "🥕")
     localStorage.setItem("petselected", "true");
     location.reload();
     petSelection.style.display = 'none';
@@ -92,6 +93,7 @@ hamster.addEventListener("click", function () {
     localStorage.setItem("pet", "hamster");
     console.log('Hamster selected')
     localStorage.setItem("petemoji", "🐹")
+    localStorage.setItem("food", "🥜")
     localStorage.setItem("petselected", "true");
     location.reload();
     petSelection.style.display = 'none';
@@ -108,6 +110,7 @@ duck.addEventListener("click", function () {
     localStorage.setItem("pet", "duck");
     console.log('Quack! Duck selected')
     localStorage.setItem("petemoji", "🦆")
+    localStorage.setItem("food", "🍞")
     localStorage.setItem("petselected", "true");
     location.reload();
     petSelection.style.display = 'none';
@@ -175,7 +178,7 @@ function saveGame() {
     var json = JSON.stringify(data);
 
     // Create a Blob from the JSON string
-    var blob = new Blob([json], {type: "application/json"});
+    var blob = new Blob([json], { type: "application/json" });
 
     // Create a URL from the Blob
     var url = URL.createObjectURL(blob);
@@ -187,7 +190,7 @@ function saveGame() {
     link.href = url;
 
     // Set the download attribute of the link
-    link.download = 'localStorage.json';
+    link.download = 'game.json';
 
     // Append the link to the body
     document.body.appendChild(link);
@@ -197,4 +200,29 @@ function saveGame() {
 
     // Remove the link from the body
     document.body.removeChild(link);
+}
+function loadGame() {
+    var input = document.createElement('input');
+
+    input.type = 'file';
+    input.accept = 'application/json';
+    input.onchange = function () {
+
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function () {
+            var data = JSON.parse(reader.result);
+
+            for (var key in data) {
+                localStorage.setItem(key, data[key]);
+            }
+
+            location.reload();
+        };
+
+        reader.readAsText(file);
+    };
+
+    input.click();
 }

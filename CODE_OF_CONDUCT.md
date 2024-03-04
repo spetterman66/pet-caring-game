@@ -1,0 +1,1 @@
+Please don't submit issues or pull requests containing spam, profanity, or anything else that violates the [GitHub Community Guidelines](https://help.github.com/en/github/site-policy/github-community-guidelines).

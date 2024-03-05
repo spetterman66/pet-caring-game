@@ -1,3 +1,5 @@
+'use strict';
+
 function startGame() {
     localStorage.setItem('readTutorial', true);
     let tutorial = document.getElementById('tutorial');

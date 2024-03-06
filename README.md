@@ -16,4 +16,5 @@ This is a pet caring game. You can feed, play, and clean your pet. You can also 
 - Safari 9+
 - Opera 10+ (Presto rendering engine) with TLS 1.2 enabled. With Opera versions based on the Chromium/Blink rendering engine, the same rules for Chrome apply
 - IE 11 with "Check for publisher's certificate revocation" and "Check for server certificate revocation" disabled
+
 It might work on other browsers, but I haven't tested it on them.

@@ -4,6 +4,7 @@
     "description": "Take care of your pet. Feed, play, and clean up after it.",
     "start_url": "/",
     "display": "standalone",
+    "display_override": ["fullscreen", "minimal-ui"],
     "background_color": "#ffffff",
     "theme_color": "#ff0000",
     "icons": [
